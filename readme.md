@@ -1,3 +1,13 @@
+Sample project to use [**EasyMVP**](https://github.com/6thsolution/EasyMVP) frameworkde
+
+**feature:**
+1. Load and display channel list from https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/channel_list.json. The displayed list is sorted by the "displayOrder" field
+2. Load and display program list from https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/channel_programs_x.json, x is the channel id. The displayed list is sorted by the "start_time" field
+
+<img src="https://raw.githubusercontent.com/leonard2014/tvProgram_android/screenshot/screenshot/channel_list.png" width="300"> <img src="https://raw.githubusercontent.com/leonard2014/tvProgram_android/screenshot/screenshot/program_list.png" width="300">
+
+<img src="https://raw.githubusercontent.com/leonard2014/tvProgram_android/screenshot/screenshot/tablet.png" width="500">
+
 Please use **Android Studio 3.0** to open this project, because the MVP framework EasyMVP needs Android Studio 3.0. 
 
 The app is based on MVP/Clean Architecture/RxJava/Retrofit/Dagger
@@ -8,7 +18,7 @@ Adopted the Master/Detail template from Android Studio, because this app is a ty
 
 23, Android Studio suggested this version when I create the project.
 
-**3rd Party libraries**
+**3rd Party libraries**a
 
 RxJava, RxAndroid : For Reactive Programming
 Dagger2: Compile time approach for dependency injection
@@ -26,14 +36,23 @@ Fresco: Powerful and convenient library for loading and display image resources 
 2. Generate Model java classes from json content with online tool
 
 For **channel list feature**, all files are in feature/channelList folder
+
 3. Create network interface with Retrofit, to get channel list Object from network
+
 4. Create unit tests to verify network layer, testing both successful and failed network requests
+
 5. Create GetChannelListUseCase to get channel list from network layer
+
 6. Create SortChannelListMapper to sort the channel list 
+
 7. Define IChannelListView and ChannelListPresenter
+
 8. Implement ChannelListPresenter to get channel list with GetChannelListUseCase, and sort the list with SortChannelListMapper
+
 9. Implement IChannelListView in ChannelListActivity
+
 10. Implement ChannelListRecyclerViewAdapter to show channel list
+
 11. Attach ChannelListActivity to ChannelListPresenter
 
 For **program list feature**, all files are in feature/program folder
