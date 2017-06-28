@@ -57,13 +57,21 @@ Repeat steps 3-11, but implement IProgramView in ChannelDetailFragment
 **Project structure**
 
 model: data model for Json object
+
 network: Retrofit interface IProgramService, and ProgramApiClient on top of IProgramService  
+
 app: for Android Application class
+
 contract: global interface, e.g. IBaseView
+
 di: app level dependency injection, including AppComponent and NetModule
+
 feature: separate sources first by feature, then by module, include channelList and program.
+
 feature/channelList: sources for channel list displaying, including view, presenter, usecase, dependency injection, data mapper
+
 feature/program: sources for program list displaying, structure similar to feature/channelList
+
 In test folder there some unit tests and test resources 
 
 
