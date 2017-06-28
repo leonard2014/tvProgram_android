@@ -1,0 +1,29 @@
+{
+  "channels": [
+    {
+      "channelId": 1,
+      "name": "Channel 1",
+      "displayOrder": 1
+    },
+    {
+      "channelId": 2,
+      "name": "Channel 2",
+      "displayOrder": 5
+    },
+    {
+      "channelId": 3,
+      "name": "Channel 3",
+      "displayOrder": 2
+    },
+    {
+      "channelId": 4,
+      "name": "Channel 4",
+      "displayOrder": 3
+    },
+    {
+      "channelId": 5,
+      "name": "Channel 5",
+      "displayOrder": 4
+    }
+  ]
+}

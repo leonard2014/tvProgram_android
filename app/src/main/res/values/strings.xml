@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">tvProg</string>
+    <string name="title_channel_detail">Channel Detail</string>
+    <string name="could_not_get_channel_list">Could not get Channel List</string>
+</resources>

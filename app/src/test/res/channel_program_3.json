@@ -1,0 +1,61 @@
+{
+  "channelId": 3,
+  "programs": [
+    {
+      "id": 1,
+      "title": "Program 1",
+      "synopsis": "Aliquam erat volutpat. Nam euismod, lacus nec malesuada bibendum, massa lorem dapibus nunc, sit amet viverra turpis dolor non massa.",
+      "start_time": "2017-01-05T03:00:00.000Z",
+      "end_time": "2017-01-05T04:00:00.000Z",
+      "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/2CF-001_small.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Program 2",
+      "synopsis": "Nullam facilisis lacus nulla, vel aliquet nisi malesuada quis. Proin eget odio velit. Pellentesque gravida euismod iaculis. Proin ac placerat sapien.",
+      "start_time": "2017-02-01T03:00:00.000Z",
+      "end_time": "2017-02-01T04:00:00.000Z",
+      "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/2CF2-001_small.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Program 3",
+      "synopsis": "Curabitur suscipit ligula id urna condimentum bibendum. Duis aliquam, risus tincidunt bibendum pharetra, risus quam mattis orci, vitae iaculis sapien metus sit amet erat.",
+      "start_time": "2017-01-01T03:00:00.000Z",
+      "end_time": "2017-01-01T04:00:00.000Z",
+      "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/2CF3-002_small.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Program 4",
+      "synopsis": "Mauris hendrerit tempor finibus. Morbi vitae malesuada nisi. Suspendisse in mi elementum, accumsan tellus vitae, cursus dui. Ut in tempor nulla, fringilla placerat ex.",
+      "start_time": "2017-01-03T03:00:00.000Z",
+      "end_time": "2017-01-03T04:00:00.000Z",
+      "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/2CF3-004_small.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Program 5",
+      "synopsis": "Donec pulvinar vehicula lacinia. Aenean ut mauris eget justo malesuada suscipit. Donec commodo tortor risus, non rhoncus velit dictum eu.",
+      "start_time": "2017-01-01T05:00:00.000Z",
+      "end_time": "2017-01-01T06:00:00.000Z",
+      "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/30XDAH1WU-001_small.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Program 6",
+      "synopsis": "Vestibulum porttitor mauris eu ipsum bibendum tristique. Maecenas dignissim est a lectus mollis, a lacinia arcu hendrerit.",
+      "start_time": "2017-01-05T05:00:00.000Z",
+      "end_time": "2017-01-05T06:00:00.000Z",
+      "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/48ffalu33_small.jpeg"
+    },
+    {
+      "id": 7,
+      "title": "Program 7",
+      "synopsis": "Proin tincidunt luctus ante, ut suscipit quam tincidunt non. Fusce eu dolor sit amet urna hendrerit fermentum. Nulla ac justo eu turpis faucibus mollis vel sed urna.",
+      "start_time": "2017-01-01T07:00:00.000Z",
+      "end_time": "2017-01-01T08:00:00.000Z",
+      "imageUrl": "https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/48z7ps8wm_small.jpeg"
+    }
+  ]
+}
