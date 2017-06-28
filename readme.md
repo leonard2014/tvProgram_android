@@ -14,10 +14,6 @@ The app is based on MVP/Clean Architecture/RxJava/Retrofit/Dagger
 
 Adopted the Master/Detail template from Android Studio, because this app is a typical mater/detail app. Channel List is is Master view, and program list is Detail view. Another reason is Master/Detail template reuses detail view in both phone/table screens. See more on the screenshots. 
 
-**Minimum SDK**
-
-23, Android Studio suggested this version when I create the project.
-
 **3rd Party libraries**a
 
 RxJava, RxAndroid : For Reactive Programming
