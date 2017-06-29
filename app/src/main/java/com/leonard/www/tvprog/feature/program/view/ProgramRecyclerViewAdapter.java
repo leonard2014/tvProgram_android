@@ -10,8 +10,7 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.leonard.www.tvprog.R;
 import com.leonard.www.tvprog.feature.program.model.ProgramForView;
-
-import java.util.List;
+import com.leonard.www.tvprog.feature.program.model.ProgramsForView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +20,7 @@ import butterknife.ButterKnife;
  */
 public class ProgramRecyclerViewAdapter
         extends RecyclerView.Adapter<ProgramRecyclerViewAdapter.ViewHolder> {
-    private List<ProgramForView> program;
+    private ProgramsForView programs;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -32,7 +31,7 @@ public class ProgramRecyclerViewAdapter
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.program = program.get(position);
+        holder.program = programs.programs.get(position);
         holder.title.setText(holder.program.title);
         holder.startTime.setText(holder.program.localStartDate);
         holder.image.setImageURI(Uri.parse(holder.program.imageUrl));
@@ -40,11 +39,11 @@ public class ProgramRecyclerViewAdapter
 
     @Override
     public int getItemCount() {
-        return (program == null) ? 0 : program.size();
+        return (programs == null) ? 0 : programs.programs.size();
     }
 
-    public void setProgram(List<ProgramForView> program) {
-        this.program = program;
+    public void setProgram(ProgramsForView programs) {
+        this.programs = programs;
 
         this.notifyDataSetChanged();
     }

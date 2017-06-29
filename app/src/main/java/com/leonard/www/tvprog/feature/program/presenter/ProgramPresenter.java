@@ -3,9 +3,7 @@ package com.leonard.www.tvprog.feature.program.presenter;
 import com.leonard.www.tvprog.feature.program.contract.IProgramView;
 import com.leonard.www.tvprog.feature.program.domain.GetProgramUseCase;
 import com.leonard.www.tvprog.feature.program.mapper.SortProgramListMapper;
-import com.leonard.www.tvprog.feature.program.model.ProgramForView;
-
-import java.util.List;
+import com.leonard.www.tvprog.feature.program.model.ProgramsForView;
 
 import javax.inject.Inject;
 
@@ -19,8 +17,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 public class ProgramPresenter extends RxPresenter<IProgramView> {
     protected GetProgramUseCase getProgramUseCase;
     protected SortProgramListMapper sortProgramListMapper;
-    protected List<ProgramForView> sortedPrograms;
-    protected boolean isInProgress;
+    protected ProgramsForView sortedPrograms;
 
     @Inject
     public ProgramPresenter(GetProgramUseCase getProgramUseCase, SortProgramListMapper sortProgramListMapper) {
@@ -28,17 +25,17 @@ public class ProgramPresenter extends RxPresenter<IProgramView> {
         this.sortProgramListMapper = sortProgramListMapper;
     }
 
-    public void presentSortedProgram() {
-        if(isInProgress) {
+    public void presentSortedProgram(int channelID) {
+        if(channelID < 0) {
+            getView().showEmpty();
             return;
         }
 
-        if(sortedPrograms != null) {
+        if(sortedPrograms != null && (sortedPrograms.channelID == channelID)) {
             getView().showContent(sortedPrograms);
             return;
         }
 
-        isInProgress = true;
         getView().showProgress();
 
         addSubscription(
@@ -47,8 +44,7 @@ public class ProgramPresenter extends RxPresenter<IProgramView> {
                         .map(sortProgramListMapper)
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnTerminate(() -> {
-                            isInProgress = false;
-                            getView().hideProgress();
+                              getView().hideProgress();
                         })
                         .subscribe(
                                 sorted -> {
@@ -64,10 +60,6 @@ public class ProgramPresenter extends RxPresenter<IProgramView> {
     public void onViewAttached(IProgramView view) {
         super.onViewAttached(view);
 
-        if(isInProgress) {
-            view.showProgress();
-        } else {
-            presentSortedProgram();
-        }
+        presentSortedProgram(getView().getChannelId());
     }
 }

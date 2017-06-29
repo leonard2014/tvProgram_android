@@ -15,10 +15,8 @@ import com.leonard.www.tvprog.R;
 import com.leonard.www.tvprog.app.MyApplication;
 import com.leonard.www.tvprog.feature.channelList.view.ChannelListActivity;
 import com.leonard.www.tvprog.feature.program.contract.IProgramView;
-import com.leonard.www.tvprog.feature.program.model.ProgramForView;
+import com.leonard.www.tvprog.feature.program.model.ProgramsForView;
 import com.leonard.www.tvprog.feature.program.presenter.ProgramPresenter;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -109,11 +107,11 @@ public class ChannelDetailFragment extends Fragment implements IProgramView {
 
     @Override
     public void showError() {
-        programStateful.showError(R.string.could_not_get_channel_list, v -> presenter.presentSortedProgram());
+        programStateful.showError(R.string.could_not_get_channel_list, v -> presenter.presentSortedProgram(getChannelId()));
     }
 
     @Override
-    public void showContent(List<ProgramForView> programs) {
+    public void showContent(ProgramsForView programs) {
         programStateful.showContent();
         adapter.setProgram(programs);
     }

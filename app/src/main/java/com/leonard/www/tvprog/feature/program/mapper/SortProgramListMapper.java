@@ -1,6 +1,7 @@
 package com.leonard.www.tvprog.feature.program.mapper;
 
 import com.leonard.www.tvprog.feature.program.model.ProgramForView;
+import com.leonard.www.tvprog.feature.program.model.ProgramsForView;
 import com.leonard.www.tvprog.model.Program;
 import com.leonard.www.tvprog.model.Programs;
 
@@ -17,13 +18,13 @@ import easymvp.boundary.DataMapper;
  * Created by leoxw on 06/24/2017.
  */
 
-public class SortProgramListMapper extends DataMapper<Programs, List<ProgramForView>> {
+public class SortProgramListMapper extends DataMapper<Programs, ProgramsForView> {
     @Inject
     public SortProgramListMapper() {
     }
 
     @Override
-    public List<ProgramForView> apply(Programs programs) throws Exception {
+    public ProgramsForView apply(Programs programs) throws Exception {
         List<Program> sorted = new LinkedList<>();
         sorted.addAll(programs.getPrograms());
 
@@ -37,6 +38,6 @@ public class SortProgramListMapper extends DataMapper<Programs, List<ProgramForV
             listForView.add(i++, new ProgramForView(program));
         }
 
-        return listForView;
+        return new ProgramsForView(programs.getChannelId(), listForView);
     }
 }
