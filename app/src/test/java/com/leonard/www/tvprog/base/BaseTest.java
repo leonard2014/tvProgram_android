@@ -12,6 +12,7 @@ import java.util.concurrent.CountDownLatch;
 
 public abstract class BaseTest {
     protected static final int WAITING = 2000;//milli seconds
+    protected static final int LONG_WAITING = 100000;//milli seconds
 
     protected CountDownLatch lock = new CountDownLatch(1);
 

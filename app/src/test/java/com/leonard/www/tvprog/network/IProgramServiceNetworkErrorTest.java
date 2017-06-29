@@ -20,7 +20,7 @@ import static org.junit.Assert.assertFalse;
  */
 
 public class IProgramServiceNetworkErrorTest extends BaseTest {
-    protected String serverUrl = "https://127.0.0.2:1234/";
+    protected String serverUrl = "https://127.0.0.1:1234/";
     IProgramService programService;
     boolean isGetError = false;
 
@@ -43,7 +43,7 @@ public class IProgramServiceNetworkErrorTest extends BaseTest {
                 .subscribe(channels -> assertFalse(true),
                         error -> isGetError = true);
 
-        lock.await(WAITING, TimeUnit.MILLISECONDS);
+        lock.await(LONG_WAITING, TimeUnit.MILLISECONDS);
 
         assertEquals(isGetError, true);
     }
@@ -57,7 +57,7 @@ public class IProgramServiceNetworkErrorTest extends BaseTest {
                 .subscribe(programs ->  assertFalse(true),
                         error -> isGetError = true);
 
-        lock.await(WAITING, TimeUnit.MILLISECONDS);
+        lock.await(LONG_WAITING, TimeUnit.MILLISECONDS);
 
         assertEquals(isGetError, true);
     }
