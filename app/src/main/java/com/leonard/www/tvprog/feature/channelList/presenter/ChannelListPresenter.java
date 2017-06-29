@@ -20,7 +20,6 @@ public class ChannelListPresenter extends RxPresenter<IChannelListView> {
     protected GetChannelListUseCase getChannelListUseCase;
     protected SortChannelListMapper sortChannelListMapper;
     protected List<Channel> sortedChannelList;
-    protected boolean isInProgress;
 
     @Inject
     public ChannelListPresenter(GetChannelListUseCase getChannelListUseCase, SortChannelListMapper sortChannelListMapper) {
@@ -29,16 +28,11 @@ public class ChannelListPresenter extends RxPresenter<IChannelListView> {
     }
 
     public void presentSortedChannelList() {
-        if(isInProgress) {
-            return;
-        }
-
         if(sortedChannelList != null) {
             getView().showContent(sortedChannelList);
             return;
         }
 
-        isInProgress = true;
         getView().showProgress();
 
         addSubscription(
@@ -47,7 +41,6 @@ public class ChannelListPresenter extends RxPresenter<IChannelListView> {
                     .map(sortChannelListMapper)
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnTerminate(() -> {
-                        isInProgress = false;
                         getView().hideProgress();
                     })
                     .subscribe(
@@ -64,10 +57,6 @@ public class ChannelListPresenter extends RxPresenter<IChannelListView> {
     public void onViewAttached(IChannelListView view) {
         super.onViewAttached(view);
 
-        if(isInProgress) {
-            view.showProgress();
-        } else {
-            presentSortedChannelList();
-        }
+        presentSortedChannelList();
     }
 }
