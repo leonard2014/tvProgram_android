@@ -1,4 +1,4 @@
-Sample project to use [**EasyMVP**](https://github.com/6thsolution/EasyMVP) frameworkde
+Sample project to use [**EasyMVP**](https://github.com/6thsolution/EasyMVP) framework
 
 **feature:**
 1. Load and display channel list from https://s3-ap-southeast-2.amazonaws.com/swm-ftp-s3/ios/channel_list.json. The displayed list is sorted by the "displayOrder" field
